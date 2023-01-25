@@ -1,0 +1,23 @@
+[package]
+edition = "2021"
+name = "mayreh_nclip"
+version = "0.0.1"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2.10.9", default-features = false, features = ["napi4", "anyhow"] }
+napi-derive = "2.9.5"
+cocoa = "0.24.1"
+objc = "0.2.7"
+objc-foundation = "0.1.1"
+objc_id = "0.1.1"
+anyhow = "1.0.68"
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
