@@ -2,7 +2,7 @@ name: CI
 env:
   DEBUG: napi:*
   APP_NAME: nclip
-  MACOSX_DEPLOYMENT_TARGET: '10.13'
+  MACOSX_DEPLOYMENT_TARGET: '10.12'
 'on':
   push:
     branches:
@@ -108,8 +108,9 @@ jobs:
         settings:
           - host: macos-latest
             target: x86_64-apple-darwin
+          - host: macos-latest
+            target: aarch64-apple-darwin
         node:
-          - '14'
           - '16'
           - '18'
     runs-on: ${{ matrix.settings.host }}
